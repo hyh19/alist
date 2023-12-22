@@ -27,6 +27,7 @@
   },
   "temp_dir": "data/temp",
   "bleve_dir": "data/bleve",
+  "dist_dir": "",
   "log": {
     "enable": true,
     "name": "data/log/log.log",
@@ -37,5 +38,34 @@
   },
   "delayed_start": 0,
   "max_connections": 0,
-  "tls_insecure_skip_verify": true
+  "tls_insecure_skip_verify": true,
+  "tasks": {
+    "download": {
+      "workers": 5,
+      "max_retry": 1
+    },
+    "transfer": {
+      "workers": 5,
+      "max_retry": 2
+    },
+    "upload": {
+      "workers": 5,
+      "max_retry": 0
+    },
+    "copy": {
+      "workers": 5,
+      "max_retry": 2
+    }
+  },
+  "cors": {
+    "allow_origins": [
+      "*"
+    ],
+    "allow_methods": [
+      "*"
+    ],
+    "allow_headers": [
+      "*"
+    ]
+  }
 }
