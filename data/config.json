@@ -13,7 +13,13 @@
     "name": "",
     "db_file": "data/data.db",
     "table_prefix": "x_",
-    "ssl_mode": ""
+    "ssl_mode": "",
+    "dsn": ""
+  },
+  "meilisearch": {
+    "host": "http://localhost:7700",
+    "api_key": "",
+    "index_prefix": ""
   },
   "scheme": {
     "address": "0.0.0.0",
@@ -42,19 +48,23 @@
   "tasks": {
     "download": {
       "workers": 5,
-      "max_retry": 1
+      "max_retry": 1,
+      "task_persistant": false
     },
     "transfer": {
       "workers": 5,
-      "max_retry": 2
+      "max_retry": 2,
+      "task_persistant": false
     },
     "upload": {
       "workers": 5,
-      "max_retry": 0
+      "max_retry": 0,
+      "task_persistant": false
     },
     "copy": {
       "workers": 5,
-      "max_retry": 2
+      "max_retry": 2,
+      "task_persistant": false
     }
   },
   "cors": {
@@ -67,5 +77,26 @@
     "allow_headers": [
       "*"
     ]
+  },
+  "s3": {
+    "enable": false,
+    "port": 5246,
+    "ssl": false
+  },
+  "ftp": {
+    "enable": false,
+    "listen": ":5221",
+    "find_pasv_port_attempts": 50,
+    "active_transfer_port_non_20": false,
+    "idle_timeout": 900,
+    "connection_timeout": 30,
+    "disable_active_mode": false,
+    "default_transfer_binary": false,
+    "enable_active_conn_ip_check": true,
+    "enable_pasv_conn_ip_check": true
+  },
+  "sftp": {
+    "enable": false,
+    "listen": ":5222"
   }
 }
